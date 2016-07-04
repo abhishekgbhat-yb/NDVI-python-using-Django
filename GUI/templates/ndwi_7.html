@@ -1,0 +1,42 @@
+<html>
+<head>
+{% load staticfiles %}
+<title>NDWI LANDSET 7</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+</head>
+<body>
+<center>
+<h1 align="center">NDWI LANDSET 7 </h1>
+<form action="." method="POST" enctype="multipart/form-data">
+{%csrf_token%}
+<label for="ndwi1">NDWI FILE 1(Band 5)</label>
+<br>
+<input type="file" id="ndwi1" name="ndwi71" required="required" style="margin-top: 15px" accept="image/*">
+<br><br><br>
+<label for="ndwi2">NDWI FILE 1(Band 2)</label>
+<br>
+<input id="ndwi2" name="ndwi72" required="required" type="file" style="margin-top: 15px">
+<br><br><br>
+
+<input type="submit" value="Generate" >
+<br><br>
+
+
+<a href="/">
+<input type="button" value="Home" >
+</a>
+<br><br><br>
+
+</form> 	
+</center>
+{%if output%}
+<script>
+alert("{{loc}}");
+</script>
+{% endif %}
+<br><br><br>
+</body>
+</html>

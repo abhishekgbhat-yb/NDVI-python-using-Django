@@ -1,0 +1,41 @@
+<html>
+<head>
+{% load staticfiles %}
+<title>NDBI LANDSET 7</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+</head>
+<body>
+<center>
+<h1 align="center">NDBI LANDSET 7 </h1>
+<form action="." method="POST" enctype="multipart/form-data">
+{%csrf_token%}
+<label for="ndbi1">NDBI FILE 1(Band 2)</label>
+<br>
+<input type="file" id="ndbi1" name="ndbi71" required="required" accept="image/*">
+<br><br><br>
+<label for="ndbi2" >NDBI FILE 1(Band 4)</label>
+<br>
+<input id="ndbi2" name="ndbi72" required="required" type="file">
+<br><br><br>
+
+<input type="submit" value="Generate" >
+<br><br><br>
+<a href="/">
+<input type="button" value="Home" >
+</a>
+</center>
+<br><br>
+</form>
+
+
+{%if output%}
+<script>
+alert("{{loc}}");
+</script>
+{% endif %}
+<br><br><br>
+</body>
+</html>
